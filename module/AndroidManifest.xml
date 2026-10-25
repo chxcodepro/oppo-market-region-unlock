@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.regionunlock.oppomarket"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="22"
+        android:targetSdkVersion="36" />
+
+    <!-- Required on Android 11+ so the launcher activity can find the store. -->
+    <queries>
+        <package android:name="com.heytap.market" />
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:label="OPPO 商店地区解锁"
+        android:supportsRtl="true">
+
+        <!-- LSPosed / Xposed 模块元数据 -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="解锁 OPPO 软件商店「服务与诊断 → 服务国家/地区」的切换限制。" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+
+        <activity
+            android:name="com.regionunlock.oppomarket.SettingsActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.DeviceDefault.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

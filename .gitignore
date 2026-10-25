@@ -1,0 +1,18 @@
+# Build outputs
+build/
+dist/
+*.apk
+*.idsig
+
+# Signing material (never commit)
+*.jks
+*.keystore
+
+# Downloaded build dependency
+libs/*.jar
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
